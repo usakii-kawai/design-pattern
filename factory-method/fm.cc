@@ -1,3 +1,4 @@
+//go:build ignore
 #include <iostream>
 #include <memory>
 
