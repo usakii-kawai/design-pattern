@@ -23,33 +23,35 @@ public:
 
 class factory {
 public:
-    ~factory() { std::cout << "delete factory, in and by " + this->name << std::endl; } 
+    ~factory() { 
+        // std::cout << "delete factory, in and by " + this->name << std::endl; 
+    } 
     virtual std::shared_ptr<product> createProduct() const = 0;
 protected:
-    virtual void setname() = 0;
+    // virtual void setname() = 0;
     std::string name;
 };
 
 class creatorA: public factory {
 public:
-    creatorA() { setname(); }
+    // creatorA() { setname(); }
     ~creatorA() { std::cout << "delete creatorA" << std::endl; } 
     std::shared_ptr<product> createProduct() const override { 
         return std::make_shared<productA>();
     }
 private:
-    void setname() override { factory::name = "creatorA"; }
+    // void setname() override { factory::name = "creatorA"; }
 };
 
 class creatorB: public factory {
 public:
-    creatorB() { setname(); }
+    // creatorB() { setname(); }
     ~creatorB() { std::cout << "delete creatorB" << std::endl; } 
     std::shared_ptr<product> createProduct() const override {
         return std::make_shared<productB>();
     }
 private:
-    void setname() override { factory::name = "creatorB"; }
+    // void setname() override { factory::name = "creatorB"; }
 };
 
 int main() {
